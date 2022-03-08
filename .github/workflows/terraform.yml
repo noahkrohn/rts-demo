@@ -37,7 +37,7 @@ jobs:
         export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
         export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
         export AWS_REGION="${{ secrets.REGION }}"
-        terraform import aws_s3_bucket.this.arn [arn:aws:s3:::rtslab-demo-tfstate]
+        terraform import aws_s3_bucket.this[0].arn arn:aws:s3:::rtslab-demo-tfstate
         terraform plan -out tfplan
 
 #    - name: Terraform Apply
