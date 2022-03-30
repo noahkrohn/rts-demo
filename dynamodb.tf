@@ -7,4 +7,7 @@ resource "aws_dynamodb_table" "this" {
     name          = "LockID"
     type          = "S"
   }
+  lifecycle {
+    prevent_destroy       = true
+  }
 }
